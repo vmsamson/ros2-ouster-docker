@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
   && cd ouster_msgs/ \
   && mkdir build \
   && cd build/ \
-  && cmake -DCMAKE_INSTALL_PREFIX=/opt/ros/foxy cmake -DCMAKE_PREFIX_PATH=/opt/ros/foxy .. \
+  && cmake -DCMAKE_INSTALL_PREFIX=/opt/ros/foxy cmake .. \
   && make -j \
   && sudo make install \
   && cd ../.. \
