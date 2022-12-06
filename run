@@ -15,8 +15,7 @@ docker run --ipc host --network host --cap-add ALL \
   -e DISPLAY=$DISPLAY -h $HOSTNAME \
   -w $PWD \
   -it --rm --privileged \
-  ros2-ouster $@
-#  ghcr.io/vmsamson/warthog $@
+  ghcr.io/vmsamson/ros2-ouster $@
 #  ros:noetic-robot $@
 #  ubuntu:20.04 $@
 #  -v /dev/input/js1:/dev/input/js1 \
