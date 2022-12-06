@@ -1,0 +1,24 @@
+#!/bin/bash
+
+xhost +local: >/dev/null
+
+docker run --ipc host --network host --cap-add ALL \
+  --gpus all -e NVIDIA_DRIVER_CAPABILITIES=all \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v $HOME:$HOME \
+  -v /media:/media \
+  -v /mnt:/mnt \
+  -v /etc/passwd:/etc/passwd:ro \
+  -v /etc/group:/etc/group:ro \
+  -v /etc/shadow:/etc/shadow:ro \
+  -u `id -u`:`id -g` \
+  -e DISPLAY=$DISPLAY -h $HOSTNAME \
+  -w $PWD \
+  -it --rm --privileged \
+  ros2-ouster $@
+#  ghcr.io/vmsamson/warthog $@
+#  ros:noetic-robot $@
+#  ubuntu:20.04 $@
+#  -v /dev/input/js1:/dev/input/js1 \
+#  -v /etc/sudoers:/etc/sudoers:ro \
+#  -v /etc/sudoers.d:/etc/sudoers.d:ro \
