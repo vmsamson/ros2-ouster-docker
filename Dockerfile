@@ -34,3 +34,7 @@ RUN apt-get update && apt-get install -y \
   && make -j \
   && sudo make install \
   && cd ../..
+
+RUN sed -i 's/10.5.5.1/192.168.40.19/g' /opt/ros/foxy/share/ros2_ouster/params/driver_config.yaml \
+  && sed -i 's/10.5.5.96/192.168.40.9/g' /opt/ros/foxy/share/ros2_ouster/params/driver_config.yaml \
+  && sed -i 's/use_system_default_qos: False/use_system_default_qos: True/g' /opt/ros/foxy/share/ros2_ouster/params/driver_config.yaml
