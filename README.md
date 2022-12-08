@@ -66,7 +66,13 @@ OR
 sudo ./run
 ```
 When inside ros2-ouster environment, start the Lidar stream:
-
+Note:
+- Your IP and LiDAR IP are set to Padions, if you are not on or remotely connected to the computer, you will have to edit:
+    - `nano /opt/ros/foxy/share/ros2_ouster/params/driver_config.yaml`
+    - Edit Computer & LiDAR IP addresses
+    - `ctrl` `X`
+    - `y`
+    - `Enter`
 ```console
 sudo apt update
 gnome-terminal
