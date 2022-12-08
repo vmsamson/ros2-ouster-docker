@@ -66,6 +66,9 @@ OR
 sudo ./run
 ```
 When inside ros2-ouster environment, start the Lidar stream:
+```console
+sudo apt update
+```
 Note:
 - Your IP and LiDAR IP are set to Padions, if you are not on or remotely connected to the computer, you will have to edit:
     - `nano /opt/ros/foxy/share/ros2_ouster/params/driver_config.yaml`
@@ -74,7 +77,6 @@ Note:
     - `y`
     - `Enter`
 ```console
-sudo apt update
 gnome-terminal
 ```
 This will open up a second terminal in the exact same environment as the first, so you can run 2 scripts symultaniously
