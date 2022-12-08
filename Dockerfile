@@ -1,4 +1,4 @@
-FROM osrf/ros:foxy-desktop
+FROM osrf/ros:humble-desktop
 ENV NO_AT_BRIDGE=1
 
 RUN apt-get update && apt-get install -y \
@@ -11,26 +11,26 @@ RUN apt-get update && apt-get install -y \
   && echo LANG=en_US.UTF-8 >/etc/default/locale
 
 RUN apt-get update && apt-get install -y \
-    ros-foxy-gazebo-ros-pkgs \
+    ros-humble-gazebo-ros-pkgs \
   && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -y \
     libtins-dev \
   && rm -rf /var/lib/apt/lists/* \
-  && export PYTHONPATH=/opt/ros/foxy/lib/python3.8/site-packages \
+  && export PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages \
   && git clone https://github.com/ros-drivers/ros2_ouster_drivers.git \
   && cd ros2_ouster_drivers/ \
   && cd ouster_msgs/ \
   && mkdir build \
   && cd build/ \
-  && cmake -DCMAKE_INSTALL_PREFIX=/opt/ros/foxy cmake .. \
+  && cmake -DCMAKE_INSTALL_PREFIX=/opt/ros/humble cmake .. \
   && make -j \
   && sudo make install \
   && cd ../.. \
   && cd ros2_ouster/ \
   && mkdir build \
   && cd build/ \
-  && cmake -DCMAKE_INSTALL_PREFIX=/opt/ros/foxy .. \
+  && cmake -DCMAKE_INSTALL_PREFIX=/opt/ros/humble .. \
   && make -j \
   && sudo make install \
   && cd ../..
