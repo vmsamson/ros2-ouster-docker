@@ -47,7 +47,7 @@ source /devel/setup.bash
 roslaunch ouster_ros sensor.launch      \
     sensor_hostname:= 192.168.40.9
 ```
-Noting 192.168.40.9 is the IP of the LiDAR in the Sydney Offie.
+Noting 192.168.40.9 is the IP of the LiDAR in the Sydney Office.
 
 ONCE DONE:
 ```console
