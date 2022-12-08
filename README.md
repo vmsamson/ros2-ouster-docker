@@ -17,6 +17,7 @@ cd
 mkdir Workspace
 cd Workplace
 git clone https://github.com/vmsamson/warthog-docker.git
+cd warthog-docker
 sudo ./run
 ```
 What just happened:
