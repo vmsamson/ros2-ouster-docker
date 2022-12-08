@@ -79,7 +79,7 @@ Note:
 ```console
 gnome-terminal
 ```
-This will open up a second terminal in the exact same environment as the first, so you can run 2 scripts symultaniously
+This will open up a second terminal in the exact same environment as the first, so you can run 2 scripts simultaneously
 From Terminal 1, run:
 ```console
 ros2 launch ros2_ouster driver_launch.py
