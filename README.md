@@ -7,18 +7,19 @@
 - Have Nvidia container kit installed, if not: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
 - User approved in `docker` group
 
-## Testing step
 
-Attempt to use ROS1, to test set up is correct:
+## Steps to run ROS2
+To run ros2-ouster environment:
 ```bash
 sudo usermod -aG docker $USER
-sudo docker pull ghcr.io/vmsamson/warthog
+sudo docker pull ghcr.io/vmsamson/ros2-ouster
 cd
 mkdir Workspace
 cd Workplace
-git clone https://github.com/vmsamson/warthog-docker.git
-cd warthog-docker
-sudo ./run
+git clone https://github.com/vmsamson/ros2-ouster-docker.git
+cd ros2-ouster-docker
+./run #if that doesnt work:
+    sudo ./run
 ```
 What just happened:
 - Created a Docker (taken an image of the drivers & set ups required and temporarily set up your computer)
@@ -28,44 +29,8 @@ sudo apt update
 glmark2
 ```
 This is testing that GUI is loaded, not just the console. A horse should appear.
-```bash
-sudo apt install -y                     \
-    ros-$ROS_DISTRO-pcl-ros             \
-    ros-$ROS_DISTRO-rviz                \
-    ros-$ROS_DISTRO-tf2-geometry-msgs
-```
-25 for AUS English
-```bash
-sudo apt install -y \
-    build-essential \
-    libeigen3-dev   \
-    libjsoncpp-dev  \
-    libspdlog-dev   \
-    cmake
-source /opt/ros/noetic/setup.bash 
-source /devel/setup.bash
-roslaunch ouster_ros sensor.launch      \
-    sensor_hostname:= 192.168.40.9
-```
-Noting 192.168.40.9 is the IP of the LiDAR in the Sydney Office.
 
-ONCE DONE:
-```console
-exit
-```
-## Real start
 
-To run ros2-ouster environment:
-
-```bash
-git clone https://github.com/vmsamson/ros2-ouster-docker
-cd ros2-ouster-docker
-./run
-```
-OR
-```bash
-sudo ./run
-```
 When inside ros2-ouster environment, start the Lidar stream:
 ```bash
 sudo apt update
