@@ -23,7 +23,7 @@ cd ros2-ouster-docker
 ```
 What just happened:
 - Created a Docker (taken an image of the drivers & set ups required and temporarily set up your computer)
-- when typed `exit` all changes that you have made will disappear, which is great for trial and error
+- when typed `exit` all changes that you have made will disappear, which means every step that is made from running will have to be reproduced after exiting and re running
 ```bash
 sudo apt update
 glmark2
