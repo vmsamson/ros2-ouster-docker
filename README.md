@@ -10,7 +10,7 @@
 ## Testing step
 
 Attempt to use ROS1, to test set up is correct:
-```console
+```bash
 sudo usermod -aG docker $USER
 sudo docker pull ghcr.io/vmsamson/warthog
 cd
@@ -23,19 +23,19 @@ sudo ./run
 What just happened:
 - Created a Docker (taken an image of the drivers & set ups required and temporarily set up your computer)
 - when typed `exit` all changes that you have made will disappear, which is great for trial and error
-```console
+```bash
 sudo apt update
 glmark2
 ```
 This is testing that GUI is loaded, not just the console. A horse should appear.
-```console
+```bash
 sudo apt install -y                     \
     ros-$ROS_DISTRO-pcl-ros             \
     ros-$ROS_DISTRO-rviz                \
     ros-$ROS_DISTRO-tf2-geometry-msgs
 ```
 25 for AUS English
-```console
+```bash
 sudo apt install -y \
     build-essential \
     libeigen3-dev   \
@@ -57,17 +57,17 @@ exit
 
 To run ros2-ouster environment:
 
-```console
+```bash
 git clone https://github.com/vmsamson/ros2-ouster-docker
 cd ros2-ouster-docker
 ./run
 ```
 OR
-```console
+```bash
 sudo ./run
 ```
 When inside ros2-ouster environment, start the Lidar stream:
-```console
+```bash
 sudo apt update
 ```
 Note:
@@ -77,18 +77,18 @@ Note:
     - `ctrl` `X`
     - `y`
     - `Enter`
-```console
+```bash
 gnome-terminal
 ```
 This will open up a second terminal in the exact same environment as the first, so you can run 2 scripts simultaneously
 From Terminal 1, run:
-```console
+```bash
 ros2 launch ros2_ouster driver_launch.py
 ```
 
 From another terminal, run rviz2:
 
-```console
+```bash
 rviz2
 ```
 Inside RVIZ2:
@@ -97,6 +97,6 @@ Change Global Options / Fixed Frame from `map` to `laser_sensor_frame`
 Located at the bottom of the screen: Add (Create Visualization) / By Topic / `/points` `PointCloud2`
 
 ONCE DONE:
-```console
+```bash
 exit
 ```
