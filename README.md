@@ -5,14 +5,13 @@
 - Use a Linux computer
 - Have docker installed, if not: https://docs.docker.com/engine/install/ubuntu/
 - Have Nvidia container kit installed, if not: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
-- User approved in `docker` group
+- User in `docker` group
 
 
 ## Steps to run ROS2
 To run ros2-ouster environment:
 ```bash
-sudo usermod -aG docker $USER
-sudo docker pull ghcr.io/vmsamson/ros2-ouster
+docker pull ghcr.io/vmsamson/ros2-ouster
 cd
 mkdir Workspace
 cd Workspace
