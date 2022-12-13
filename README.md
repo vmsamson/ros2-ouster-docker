@@ -18,23 +18,14 @@ mkdir Workspace
 cd Workplace
 git clone https://github.com/vmsamson/ros2-ouster-docker.git
 cd ros2-ouster-docker
-./run #if that doesnt work:
-    sudo ./run
+./run
 ```
 What just happened:
 - Created a Docker (taken an image of the drivers & set ups required and temporarily set up your computer)
 - when typed `exit` all changes that you have made will disappear, which means every step that is made from running will have to be reproduced after exiting and re running
-```bash
-sudo apt update
-glmark2
-```
-This is testing that GUI is loaded, not just the console. A horse should appear.
-
 
 When inside ros2-ouster environment, start the Lidar stream:
-```bash
-sudo apt update
-```
+
 Note:
 - Your IP and LiDAR IP are set to Padions, if you are not on or remotely connected to the computer, you will have to edit:
     - `nano /opt/ros/foxy/share/ros2_ouster/params/driver_config.yaml`
