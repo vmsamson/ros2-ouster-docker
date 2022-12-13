@@ -15,7 +15,7 @@ sudo usermod -aG docker $USER
 sudo docker pull ghcr.io/vmsamson/ros2-ouster
 cd
 mkdir Workspace
-cd Workplace
+cd Workspace
 git clone https://github.com/vmsamson/ros2-ouster-docker.git
 cd ros2-ouster-docker
 ./run
